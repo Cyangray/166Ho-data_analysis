@@ -3,15 +3,10 @@
 """
 Created on Thu Oct 14 15:26:05 2021
 
-@author: francesco, updated 21st March 2022
-OLD
-Script to loop through the folders made with run_counting.py, and writes for
-each gsf and nld a e1strength, m1strength and Sb.tab file to be used as input by talys,
-possibly in Saga. In order to keep the number of nld-gsf pairs low, only the pairs
-with a chi2 score between chimin and chimin+2 will be translated into talys-input files.
-(To calculate all, just put chimin2 to a very big number)
-In order to extrapolate for the GDR, the 127Sb gsf is attached
-to the 128Te GDR
+@author: francesco, updated December 28th 2022
+Script that runs TALYS for the best fitting nld and gsf, and the four combinations
+of low and high error limit. Then writes the highest and lowest calculated
+neutron-capture rate and MACS to file.
 """
 
 import os

@@ -3,19 +3,22 @@
 '''
 Created on Sat Aug 20 12:17:28 2022
 
-@author: francesco, last update 31st january 2022
+@author: francesco, last update December 28th 2022
 
 Script to loop through counting.c and normalization.c from the Oslo method.
 It creates a directory structure with different input.cnt with different values
-of L1, L2 and rho, and runs counting on them. The results are written in each its
-folder. Then for each of these, normalization.c is run with different values of
-<Gamma_gamma>
+of L1, L2 and spin-cutoff parameter (thus, rho(Sn)), and runs counting on them. 
+The results are written in each itsfolder. 
+Then for each of these, normalization.c is run with different values of <Gamma_gamma>
 Preparations: 
 1) in the same folder as this script, put copies of counting.dat, 
 rhosp.rsg, sigsp.rsg, rhopaw.rsg, sigpaw.rsg files in the same folder
 2) run counting once as you normally would. Copy the values in input.cnt in the 
 variable "newinput_cnt", changing the values for L1, L2 and rho with the corresponding 
-code variables. Use the example for 127Sb here as an example
+code variables. Use the example for 166Ho here as an example. The spin-cutoff parameter
+is varied and the distribution is the one used in the "ALEX" method in counting.c.
+The values of low Ex and average spin at that value (the values 0.200000 4.500000
+in the input.cnt file) are calculated with the spin_distribution.py script.
 3) similarly for normalization: run it once as you normally would, and change the
 values in newinput_nrm with the one you got, keeping the name of the python variables
 here.
@@ -25,6 +28,7 @@ where all lines where it asks input (sscanf, I think) must be commented out, so
 that it only imports data from input.cnt and input.nrm.
 to make the program run smoother, comment out as well all printed messages in
 the c file.
+Change the paths so that it reflects the folder setup on your computer.
 '''
 
 from subprocess import call
@@ -112,8 +116,8 @@ Gg_mean = 84
 Gg_sigma = 5
 Gglist = np.linspace(73,97,25)
 
-rho_Sn_err_up = drho(target_spin, spin_cutoff_high, spin_cutoff_high*cutoff_unc, D0, D0_err) #assume 10% error in spin_cutoff param
-rho_Sn_err_down = drho(target_spin, spin_cutoff_low, spin_cutoff_low*cutoff_unc, D0, D0_err) #assume 10% error in spin_cutoff param
+rho_Sn_err_up = drho(target_spin, spin_cutoff_high, spin_cutoff_high*cutoff_unc, D0, D0_err)
+rho_Sn_err_down = drho(target_spin, spin_cutoff_low, spin_cutoff_low*cutoff_unc, D0, D0_err)
 rho_lowerlim = D2rho(D0, target_spin, spin_cutoff_low)
 rho_upperlim = D2rho(D0, target_spin, spin_cutoff_high)
 rho_mean = (rho_lowerlim - rho_Sn_err_down + rho_upperlim + rho_Sn_err_up)/2

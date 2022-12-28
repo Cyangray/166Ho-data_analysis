@@ -16,7 +16,6 @@ In order to extrapolate for the GDR, a high-energy extrapolation of the GSF is a
 import os
 import numpy as np
 from systlib import make_E1_M1_files, make_TALYS_tab_file, load_known_gsf, make_E1_M1_files_simple, D2rho, drho, GLO_hybrid_arglist, SLO_arglist
-import matplotlib.pyplot as plt
 
 #paths
 NLD_pathstring = 'FG'

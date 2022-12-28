@@ -3,7 +3,7 @@
 '''
 Created on Thu Oct 14 09:49:41 2021
 
-@author: francesco, updated 31 January 2022
+@author: francesco, updated December 28th 2022
 
 To run this code, you have to have run run_cnt_nrm.py in Make_dataset/
 
@@ -26,11 +26,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from systlib import import_ocl, nld, gsf, import_Bnorm, astrorate, import_Anorm_alpha, chisquared, flat_distr_chi2_fade, calc_errors_chis, calc_errors_chis_MACS, D2rho, rho2D, drho
 
-#NLD_pathstring = 'FG_RMI_cutoff_unc_000_70'#'FG_cutoff_unc_000_51'     #either 'CT', 'FG' or 'FG_RIPL3'
-NLD_pathstring = 'FG'  
 #paths
+NLD_pathstring = 'FG'  
 database_path = '/home/francesco/Documents/163Dy-alpha-2018/Fittings/Make_dataset/166Ho-database_' + NLD_pathstring + '/'
-
 
 #constants. Don't play with these
 hc = 197.3269804 #MeV*fm
@@ -49,7 +47,7 @@ spin_cutoff_low = 5.546
 spin_cutoff_high = 6.926
 cutoff_unc = 0.00
 
-
+#data from Mughabghab
 D0 = 4.35
 D0_err = 0.15
 Gg_mean = 84
@@ -66,21 +64,17 @@ base_spin_cutoff = (spin_cutoff_low + spin_cutoff_high)/2
 base_rho = D2rho(D0, target_spin,base_spin_cutoff)
 rho_flat_distr = True
 
-
 #Play with these parameters
-
 #region of the nld where to evaluate the chi squared test
 chi2_lim = [9,13]  #Fitting interval. Limits are included.
 method = 'linear'
 
 #some switches
-load_lists = True
+load_lists = False
 plot_chis = True
-astro = True
+astro = False
 energy_bin = 30
 temp_bin = 7
-
-
 
 '''
 Initializing main loop. 
@@ -91,7 +85,7 @@ squared test to the region in chi2_lim, save all the parameters in the nld and
 gsf objects, and the objects in lists.
 '''
 
-Ho166_nld_lvl = import_ocl('/home/francesco/Documents/163Dy-alpha-2018/OsloMethod_currently_best_FG_backup/rholev.cnt',a0,a1)
+Ho166_nld_lvl = import_ocl('data/rholev.cnt',a0,a1)
 chi2_lim_e = [Ho166_nld_lvl[int(chi2_lim[0]),0], Ho166_nld_lvl[int(chi2_lim[1]),0]]
 
 if load_lists:
@@ -154,7 +148,7 @@ else:
                 
                 for Gg in Gglist:
                     Ggstr = str(int(Gg))
-                    curr_gsf = gsf(database_path + new_dir_rho + '/' + new_dir_L1_L2 + '/' + Ggstr + '/strength.nrm', a0 = a0, a1 = a1, is_sigma = False, is_ocl = True)#, channels=78)
+                    curr_gsf = gsf(database_path + new_dir_rho + '/' + new_dir_L1_L2 + '/' + Ggstr + '/strength.nrm', a0 = a0, a1 = a1, is_sigma = False, is_ocl = True)
                     Bnorm = import_Bnorm(database_path + new_dir_rho + '/' + new_dir_L1_L2 + '/' + Ggstr + '/input.nrm')
                     if astro:
                         found_astro = False
@@ -191,14 +185,7 @@ else:
     if astro:
         np.save('data/generated/ncrates_' + NLD_pathstring + '.npy', ncrates)
 
-
 valmatrices = [[],[]]
-'''
-for lst, lab, i in zip([nlds, gsfs], ['nld_' + NLD_pathstring,'gsf_' + NLD_pathstring], [0,1]):
-    valmatrices[i] = calc_errors_chis(lst)
-    header = 'Energy [MeV], best_fit, best_fit-2*sigma, best_fit-sigma, best_fit+sigma, best_fit+2*sigma' 
-    np.savetxt('data/generated/' + lab + '_whole.txt',valmatrices[i], header = header)
-'''
 if astro:
     astrovalmatrix,_ = calc_errors_chis(ncrates)
     header = 'T [GK], best_fit, best_fit-2*sigma, best_fit-sigma, best_fit+sigma, best_fit+2*sigma' 
