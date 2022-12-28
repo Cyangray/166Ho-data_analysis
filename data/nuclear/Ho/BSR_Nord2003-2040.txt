@@ -1,0 +1,3 @@
+# B_SR for 2-4 MeV from Nord et al. 2003
+# A, B_SR, err
+165 3.08 0.36

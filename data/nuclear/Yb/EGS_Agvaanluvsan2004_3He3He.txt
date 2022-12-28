@@ -1,0 +1,4 @@
+# B_SR for 2.7-3.7 MeV from Agvaanluvsan et al. 2004. (3He,3He). A is changed for plotting reasons
+# A, E, E_unc, G, G_unc, S, S_unc, B_SR2737, err, B_SR0010, err, def(incorrect def)
+171 3.54 0.10 0.91 0.18 0.50 0.09 0 0 0 0 0.3277
+172 3.28 0.18 1.36 0.41 0.48 0.12 0 0 0 0 0.3315

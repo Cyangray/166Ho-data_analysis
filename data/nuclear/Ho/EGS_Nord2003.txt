@@ -1,0 +1,4 @@
+# B_SR for 2-4 MeV from Nord et al. 2003
+# A, E, E_unc, G, G_unc, S, S_unc, B_SR2040, err, B_SR0010, err, def
+165 0 0 0 0 0 0 3.08 0.36 0 0 0.34235
+165 0 0 0 0 0 0 3.08 0.36 0 0 0.34235

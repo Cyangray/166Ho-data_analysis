@@ -1,0 +1,35 @@
+#---EXFOR Request #8763
+#---EXFOR Generalized Computational Output---
+#=============================================================================
+#DATASET        G3113002 
+#NOW            2022/03/23:18:59:34
+#SUBENT         G3113002   20150507
+#ENTRY          G3113      20150507
+#AUTHOR1        V.D.Nguyen+
+#YEAR           2013
+#X4REF1         J,JRN,298,1447,2013
+#REFERENCE1     Jour: Journal of Radioanalytical and Nuclear Chemistry, Vol.298, p.1447 (2013)
+#REACTION       67-HO-165(G,N)67-HO-164-M/G,,SIG/RAT,,BRA
+#D4REAC         R0#
+#C4Reaction     (G,N),SIG/RAT,,BRA
+#ReactionType   CS
+#Quantity       Cross section ratio
+#IndVarFamCode  [0 2        ]
+#ExpectedUnits  [NO-DIM]
+#xVariables     1
+#+              Y = Y(X1)
+#Proj-ZA     0 
+#Targ-ZA     67165
+#Prod        67-HO-164-M/G
+#Prod-ZA     67164.9
+#Prod-Meta   M/G
+#computDATA  5           4          12
+#Data        Error       EN          Error       
+#NO-DIM      NO-DIM      EV          EV          
+ 0.408       0.027       4.5e7       -0.         
+ 0.413       0.027       5e7         -0.         
+ 0.427       0.029       5.5e7       -0.         
+ 0.452       0.032       6e7         -0.         
+ 0.448       0.031       6.5e7       -0.         
+#/computDATA 5          11
+#ENDDATASET     G3113002 

@@ -1,0 +1,44 @@
+#---EXFOR Request #8770
+#---EXFOR Generalized Computational Output---
+#=============================================================================
+#DATASET        K2613003 
+#NOW            2022/03/23:19:07:46
+#SUBENT         K2613003   20190707
+#ENTRY          K2613      20190707
+#AUTHOR1        T.Renstrom+
+#YEAR           2018
+#X4REF1         J,PR/C,98,054310,2018
+#REFERENCE1     Jour: Physical Review, Part C, Nuclear Physics, Vol.98, p.054310 (2018)
+#REACTION       66-DY-163(G,N)66-DY-162,,SIG
+#D4REAC         R0#
+#C4Reaction     (G,N),SIG
+#ReactionType   CS
+#Quantity       Cross section
+#IndVarFamCode  [0 2        ]
+#ExpectedUnits  [B]
+#xVariables     1
+#+              Y = Y(X1)
+#Proj-ZA     0 
+#Targ-ZA     66163
+#Prod        66-DY-162
+#Prod-ZA     66162
+#computDATA  15          4          12
+#Data        Error       EN          Error       
+#B           B           EV          EV          
+ 0.00613     0.00016     6.48e6      -0.         
+ 0.0131      0.00032     6.74e6      -0.         
+ 0.01621     0.00041     7.01e6      -0.         
+ 0.01508     0.00043     7.28e6      -0.         
+ 0.01895     0.00054     7.55e6      -0.         
+ 0.02084     0.00061     7.83e6      -0.         
+ 0.02759     0.00076     8.28e6      -0.         
+ 0.03367     0.00095     8.73e6      -0.         
+ 0.04694     0.00139     9.2e6       -0.         
+ 0.06923     0.00195     9.82e6      -0.         
+ 0.09556     0.00284     1.046e7     -0.         
+ 0.14962     0.00439     1.112e7     -0.         
+ 0.25844     0.00696     1.18e7      -0.         
+ 0.295       0.00902     1.249e7     -0.         
+ 0.2256      0.00889     1.321e7     -0.         
+#/computDATA 15         3
+#ENDDATASET     K2613003 

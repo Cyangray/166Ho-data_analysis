@@ -1,0 +1,13 @@
+projectile n
+element Ho
+mass 165
+energy n0-20.grid
+E1file 67 166 gsfE1.dat
+M1file 67 166 gsfM1.dat
+gnorm 1.
+ldmodel 4
+ptable 67 166 0.0
+ctable 67 166 0.0
+Nlevels 67 166 30
+outgamma y
+astro y

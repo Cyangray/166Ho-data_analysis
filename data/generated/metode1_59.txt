@@ -1,0 +1,2 @@
+# line 1: Varlamov. E, err, gamma, err, sigma, err, BSR 2.0-4.0MeV, err, BSR 0-10MeV, err, def
+166.0000 3.1519 0.0570 0.9595 0.0982 0.4180 0.0409 3.2092 0.4583 4.0661 0.5806 0.3424

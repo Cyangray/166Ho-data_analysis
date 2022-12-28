@@ -1,0 +1,41 @@
+#---EXFOR Request #8274
+#---EXFOR Generalized Computational Output---
+#=============================================================================
+#DATASET        M0848002 
+#NOW            2022/03/22:14:57:11
+#SUBENT         M0848002   20120517
+#ENTRY          M0848      20120517
+#AUTHOR1        Tran Duc Thiep+
+#YEAR           2011
+#X4REF1         J,JRN,290,515,2011
+#REFERENCE1     Jour: Journal of Radioanalytical and Nuclear Chemistry, Vol.290, p.515 (2011)
+#REACTION       67-HO-165(G,N)67-HO-164-M/G,,SIG/RAT,,BRA
+#D4REAC         R0#
+#C4Reaction     (G,N),SIG/RAT,,BRA
+#ReactionType   CS
+#Quantity       Cross section ratio
+#IndVarFamCode  [0 2        ]
+#ExpectedUnits  [NO-DIM]
+#xVariables     1
+#+              Y = Y(X1)
+#Proj-ZA     0 
+#Targ-ZA     67165
+#Prod        67-HO-164-M/G
+#Prod-ZA     67164.9
+#Prod-Meta   M/G
+#computDATA  11          4          12
+#Data        Error       EN          Error       
+#NO-DIM      NO-DIM      EV          EV          
+ 0.22        0.021       1.4e7       -0.         
+ 0.25        0.025       1.5e7       -0.         
+ 0.286       0.027       1.6e7       -0.         
+ 0.311       0.031       1.7e7       -0.         
+ 0.335       0.034       1.8e7       -0.         
+ 0.362       0.036       1.9e7       -0.         
+ 0.374       0.038       2e7         -0.         
+ 0.378       0.037       2.1e7       -0.         
+ 0.379       0.038       2.3e7       -0.         
+ 0.38        0.038       2.4e7       -0.         
+ 0.376       0.037       2.5e7       -0.         
+#/computDATA 11         3
+#ENDDATASET     M0848002 

@@ -1,0 +1,39 @@
+#---EXFOR Request #8274
+#---EXFOR Generalized Computational Output---
+#=============================================================================
+#DATASET        M0844004 
+#NOW            2022/03/22:14:51:47
+#SUBENT         M0844004   20120423
+#ENTRY          M0844      20120423
+#AUTHOR1        P.Axel+
+#YEAR           1966
+#X4REF1         J,JPR,27,262,1966
+#REFERENCE1     Jour: Journal de Physique, Vol.27, p.262 (1966)
+#REACTION       67-HO-165(G,2N)67-HO-163,,SIG
+#D4REAC         R0#
+#C4Reaction     (G,2N),SIG
+#ReactionType   CS
+#Quantity       Cross section
+#IndVarFamCode  [0 2        ]
+#ExpectedUnits  [B]
+#xVariables     1
+#+              Y = Y(X1)
+#Proj-ZA     0 
+#Targ-ZA     67165
+#Prod        67-HO-163
+#Prod-ZA     67163
+#computDATA  10          4          12
+#Data        Error       EN          Error       
+#B           B           EV          EV          
+ 0.01179     0.00717     1.524e7     -0.         
+ 0.03773     0.008       1.563e7     -0.         
+ 0.04717     0.00943     1.57e7      -0.         
+ 0.05896     0.01        1.582e7     -0.         
+ 0.08146     0.0105      1.641e7     -0.         
+ 0.10377     0.01415     1.665e7     -0.         
+ 0.099       0.01226     1.7e7       -0.         
+ 0.10335     0.01038     1.729e7     -0.         
+ 0.09962     0.01424     1.765e7     -0.         
+ 0.08019     0.015       1.829e7     -0.         
+#/computDATA 10         3
+#ENDDATASET     M0844004 
